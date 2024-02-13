@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login | HTMX Demo</title>
+		<link rel="stylesheet" href="./css/styles.css" />
+		<script src="https://kit.fontawesome.com/0ac72a7378.js" crossorigin="anonymous"></script>
+		<script
+			src="https://unpkg.com/htmx.org@1.9.10"
+			integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+			crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		{{> header}}
+
+		<main>
+			{{#if error}}
+			<p><strong>{{error}}</strong></p>
+			{{/if}}
+
+			<form name="login" action="/login" method="POST" autocomplete="off" novalidate>
+				<fieldset>
+					<legend>Login</legend>
+
+					<div class="inputGroup">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" required />
+					</div>
+
+					<div class="inputGroup">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" required />
+					</div>
+				</fieldset>
+
+				<button type="submit">Login</button>
+			</form>
+		</main>
+
+		{{> footer}}
+	</body>
+</html>

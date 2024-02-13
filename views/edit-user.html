@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Edit User | HTMX Demo</title>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<script src="https://kit.fontawesome.com/0ac72a7378.js" crossorigin="anonymous"></script>
+		<script
+			src="https://unpkg.com/htmx.org@1.9.10"
+			integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+			crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		{{> header}}
+
+		<main>
+			<h1>Edit User</h1>
+
+			<img id="spinner" class="htmx-indicator" src="../assets/loader.gif" />
+			<dialog hx-on:click="this.close()"></dialog>
+
+			<form
+				name="editUser"
+				hx-put="/users/{{userId}}"
+				hx-target="dialog"
+				hx-indicator="#spinner"
+				hx-on::after-request="document.querySelector('dialog').showModal()"
+				hx-encoding="multipart/form-data"
+				autocomplete="off"
+				novalidate>
+				<fieldset>
+					<legend>User Info</legend>
+
+					<div class="inputGroup">
+						<label for="firstName">First Name</label>
+						<input type="text" name="firstName" id="firstName" value="{{firstName}}" required />
+					</div>
+
+					<div class="inputGroup">
+						<label for="lastName">Last Name</label>
+						<input type="text" name="lastName" id="lastName" value="{{lastName}}" required />
+					</div>
+
+					<div class="inputGroup">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" value="{{email}}" required />
+					</div>
+
+					<div class="inputGroup">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" value="{{password}}" required />
+					</div>
+
+					<div class="inputGroup">
+						<label for="avatar">Avatar</label>
+						<input type="file" name="avatar" id="avatar" />
+					</div>
+
+					{{#if avatar}}
+					<div class="inputGroup">
+						<dl id="savedUpload">
+							<dt>Saved Avatar</dt>
+							<dd><img src="../{{avatar}}" /></dd>
+						</dl>
+					</div>
+					{{/if}}
+				</fieldset>
+
+				<button type="submit">Update</button>
+			</form>
+		</main>
+
+		{{> footer}}
+	</body>
+</html>

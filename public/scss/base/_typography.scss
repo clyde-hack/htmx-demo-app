@@ -1,0 +1,71 @@
+@use '../utils' as *;
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #404040;
+}
+
+$headlines: (
+	'h1': 2rem,
+	'h2': 1.5rem,
+	'h3': 1.17rem,
+	'h4': 1rem,
+	'h5': 0.83rem,
+	'h6': 0.75rem
+);
+
+@each $h, $size in $headlines {
+	#{$h} {
+		font-family: 'Playfair Display';
+		font-size: $size;
+		font-weight: 600;
+		line-height: 1em;
+		margin-top: calc(#{$baseline} * 2 - 1em);
+		margin-bottom: $baseline;
+	}
+}
+
+p,
+blockquote,
+code,
+figure,
+ul,
+ol,
+dl {
+	margin-block: $baseline;
+}
+
+p,
+blockquote {
+	max-width: 50em;
+}
+
+a,
+a:active,
+a:visited {
+	text-decoration: none;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+i,
+em {
+	font-style: italic;
+}
+
+code {
+	font-family: monospace;
+}
+
+small {
+	font-size: 0.67em;
+}

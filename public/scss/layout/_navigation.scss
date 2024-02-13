@@ -1,0 +1,12 @@
+@use '../utils' as *;
+
+#siteNav {
+	display: flex;
+	gap: $gutter;
+
+	a {
+		&:hover {
+			color: steelblue;
+		}
+	}
+}

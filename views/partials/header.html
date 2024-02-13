@@ -1,0 +1,11 @@
+<header>
+	<strong id="siteTitle">HTMX Demo</strong>
+
+	<nav id="siteNav">
+		<a href="/">Home</a>
+		<a href="/register">Register</a>
+		{{#if user.id}}
+		<a href="/logout">Logout</a>
+		{{/if}}
+	</nav>
+</header>

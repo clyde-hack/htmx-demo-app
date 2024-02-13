@@ -1,0 +1,34 @@
+@use 'sass:math';
+@use '../utils' as *;
+
+table {
+	width: 100%;
+	margin-top: $gutter;
+	margin-bottom: $gutter;
+	background-color: white;
+
+	th,
+	td {
+		padding: $gutter-sm;
+	}
+
+	th {
+		font-size: 0.875em;
+		font-weight: 500;
+		text-align: left;
+		padding-top: math.div($gutter-sm, 2);
+		padding-bottom: math.div($gutter-sm, 2);
+	}
+
+	td {
+		font-size: 0.875em;
+	}
+
+	tbody tr {
+		border-top: 1px solid gainsboro;
+
+		&:nth-child(odd) {
+			background-color: ghostwhite;
+		}
+	}
+}

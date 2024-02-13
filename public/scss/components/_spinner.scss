@@ -1,0 +1,12 @@
+@use '../utils' as *;
+
+#spinner {
+	display: none;
+	width: 1.25rem;
+	margin: $gutter auto;
+}
+
+.htmx-request #spinner,
+.htmx-request#spinner {
+	display: block;
+}

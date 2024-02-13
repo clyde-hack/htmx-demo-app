@@ -1,0 +1,25 @@
+{
+  "name": "htmx-demo-app",
+  "version": "1.0.0",
+  "description": "A simple HTMX app.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Clyde Hack",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.3",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
