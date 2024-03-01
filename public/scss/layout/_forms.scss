@@ -2,6 +2,7 @@
 
 form {
 	width: 100%;
+	max-width: 50em;
 	margin-block: $gutter;
 	padding-inline: $gutter;
 	border-radius: $border-radius;
@@ -37,7 +38,6 @@ input {
 
 input {
 	width: 100%;
-	max-width: 50em;
 	padding-inline: $gutter-sm;
 	background-color: white;
 	border: 1px solid gainsboro;

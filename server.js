@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import session from 'express-session';
 import hbs from 'hbs';
+import { initializeDB } from './db.js';
 import auth from './routes/auth.js';
 import router from './routes/router.js';
 
@@ -15,6 +16,7 @@ hbs.registerPartials('./views/partials', {
 	footer: 'footer.html'
 });
 
+app.use(initializeDB);
 app.use(
 	session({
 		secret: process.env.SESS_SECRET,
@@ -27,7 +29,7 @@ app.use(express.static('public'));
 app.use(express.static('uploads'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/', auth);
-app.use('/', router);
+app.use(auth);
+app.use(router);
 
 app.listen(port, () => console.log(`Server running on port ${port}...`));
