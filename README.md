@@ -2,7 +2,7 @@
 
 This small app is a simple demonstration of CRUD operations using HTMX.
 
-**_Important!_** _You will need to install [NodeJS](https://nodejs.org/en){:target="\_blank"} and [MySql Community Server](https://www.mysql.com/){:target="\_blank"}._
+**_Important!_** _You will need to install [NodeJS](https://nodejs.org/en) and [MySql Community Server](https://www.mysql.com/)._
 
 ## Setup
 
